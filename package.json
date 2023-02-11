@@ -4,7 +4,7 @@
   "description": "Automatizacion de pruebas, tanto UI como de APIs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " ./node_modules/.bin/cypress open"
   },
   "keywords": [
     "qa",
@@ -16,5 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.5.1"
+  },
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/alatorre-sebastian/Portafolio_QA_TESTING"
   }
 }
