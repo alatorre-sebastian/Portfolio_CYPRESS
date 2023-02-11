@@ -1,0 +1,20 @@
+{
+  "name": "portafoliotesting",
+  "version": "1.0.0",
+  "description": "Automatizacion de pruebas, tanto UI como de APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qa",
+    "automation",
+    "testing",
+    "portafolio"
+  ],
+  "author": "Sebastian Alatorre",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.5.1"
+  }
+}
