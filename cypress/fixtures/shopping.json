@@ -1,0 +1,21 @@
+{
+
+    "addCart1" : ":nth-child(1) > .shop-item-details > .btn",
+    "addCart2" : ":nth-child(2) > .shop-item-details > .btn",
+    "addCart3" : ":nth-child(3) > .shop-item-details > .btn",
+    "addCart4" : ":nth-child(4) > .shop-item-details > .btn",
+    "addCart5" : ":nth-child(5) > .shop-item-details > .btn",
+    "cartItem1": ".cart-items > :nth-child(1)",
+    "cartItem2": ".cart-items > :nth-child(2)",
+    "cartItem3": ".cart-items > :nth-child(3)",
+    "cartItem4": ".cart-items > :nth-child(4)",
+    "cartItem5": ".cart-items > :nth-child(5)",
+    "qty1" : ":nth-child(1) > .cart-quantity > .cart-quantity-input",
+    "qty2" : ":nth-child(2) > .cart-quantity > .cart-quantity-input",
+    "qty3" : ":nth-child(3) > .cart-quantity > .cart-quantity-input",
+    "qty4" : ":nth-child(4) > .cart-quantity > .cart-quantity-input",
+    "qty5" : ":nth-child(5) > .cart-quantity > .cart-quantity-input",
+    "removeBtn1" : ":nth-child(1) > .cart-quantity > .btn",
+    "removeBtn2" : ":nth-child(2) > .cart-quantity > .btn",
+    "removeBtn3" : ":nth-child(3) > .cart-quantity > .btn"
+}
