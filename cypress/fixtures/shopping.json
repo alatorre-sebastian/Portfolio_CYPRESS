@@ -17,5 +17,6 @@
     "qty5" : ":nth-child(5) > .cart-quantity > .cart-quantity-input",
     "removeBtn1" : ":nth-child(1) > .cart-quantity > .btn",
     "removeBtn2" : ":nth-child(2) > .cart-quantity > .btn",
-    "removeBtn3" : ":nth-child(3) > .cart-quantity > .btn"
+    "removeBtn3" : ":nth-child(3) > .cart-quantity > .btn",
+    "payBtn" : ":nth-child(1) > .btn-primary"
 }

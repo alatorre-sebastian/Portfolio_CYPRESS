@@ -1,0 +1,11 @@
+{
+
+    "phoneNumber" : "#phone",
+    "adress" : ":nth-child(2) > .form-control",
+    "street" : ":nth-child(2) > .form-control",
+    "city" : ":nth-child(3) > .form-control",
+    "country" : "#countries_dropdown_menu",
+    "submitOrderBtn" :"#submitOrderBtn",
+    "successOrderMessage" : "#message",
+    "finalPrice":"#message > :nth-child(1)"
+}
