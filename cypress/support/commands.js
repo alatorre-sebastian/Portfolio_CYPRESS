@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('shippingForm',(number,street,city,country)=>{
+    cy.fixture("shipping").then((shipping)=>{ 
+        cy.get(shipping.phoneNumber).click().type(number);
+        cy.get(shipping.street).click().type(street);
+        cy.get(shipping.city).click().type(city);
+        cy.get(shipping.country).select(country);
+        cy.get(shipping.submitOrderBtn).click();
+        cy.get(shipping.successOrderMessage).contains("Congrats!")
+    })   
+})
+
+Cypress.Commands.add('loginForm',(email,password)=>{
+    cy.fixture("index").then((index)=>{ 
+        cy.get(index.emailBox).type(email);
+        cy.get(index.passBox).type(password);
+        cy.get(index.submitBtn).click();
+    })
+});

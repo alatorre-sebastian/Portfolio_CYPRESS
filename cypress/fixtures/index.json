@@ -4,5 +4,5 @@
     "passBox" : "#password",
     "submitBtn":"#submitLoginBtn",
     "badCred" : "#loginSection > #message"
-
+    
 }

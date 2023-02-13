@@ -18,6 +18,7 @@ describe('Login with default user',()=>{
             cy.get(index.passBox).type("admin123");
             cy.get(index.submitBtn).click();
         }) 
+        //cy.loginForm('admin@admin.com','admin123')
     })
 
 });
@@ -25,12 +26,9 @@ describe('Login with default user',()=>{
 describe('Login without default user',()=>{
     it('should not let you login',()=>{
         cy.visit("/");
+        cy.loginForm('thisIsATest@gmail.com','testing123123')
         cy.fixture("index").then((index)=>{ 
-            cy.get(index.emailBox).type("thisIsATest@gmail.com");
-            cy.get(index.passBox).type("testing123123");
-            cy.get(index.submitBtn).click();
             cy.get(index.badCred).contains("Bad credentials! Please try again! Make sure that you've registered.")
-
         }) 
     })
 

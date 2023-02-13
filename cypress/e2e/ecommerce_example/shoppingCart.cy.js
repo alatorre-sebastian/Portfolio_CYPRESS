@@ -2,12 +2,7 @@
 describe('Shopping Cart Page',()=>{
     beforeEach(() => {
         cy.visit("/");
-        cy.fixture("index").then((index)=>{ 
-            cy.get(index.emailBox).type("admin@admin.com");
-            cy.get(index.passBox).type("admin123");
-            cy.get(index.submitBtn).click();
-        }) 
-      
+        cy.loginForm('admin@admin.com','admin123')
       });
     it('Should add, remove, be visible',()=>{
         //Agregar al carrito
@@ -40,31 +35,5 @@ describe('Shopping Cart Page',()=>{
             cy.get(shopping.removeBtn1).click();
             cy.get(shopping.removeBtn2).click();
         })
-    });
-});
-
-describe('Shipping Page',()=>{
-    beforeEach(() => {
-        cy.visit("/");
-        cy.fixture("index").then((index)=>{ 
-            cy.get(index.emailBox).type("admin@admin.com");
-            cy.get(index.passBox).type("admin123");
-            cy.get(index.submitBtn).click();
-        }) 
-      
-      });
-    it('Should let you proceed to payment HAPPY PATH',()=>{
-        cy.fixture("shopping").then((shopping)=>{ 
-            cy.get(shopping.addCart1).click();
-            cy.get(shopping.payBtn).click();
-        });  
-
-        cy.fixture("shipping").then((shipping)=>{ 
-            cy.get(shipping.phoneNumber).click().type("555-55-55");
-            cy.get(shipping.street).click().type("Fake street avenue");
-            cy.get(shipping.city).click().type("Ensenada");
-            cy.get(shipping.country).select("Mexico");
-        }); 
-
     });
 });

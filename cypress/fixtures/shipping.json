@@ -8,4 +8,5 @@
     "submitOrderBtn" :"#submitOrderBtn",
     "successOrderMessage" : "#message",
     "finalPrice":"#message > :nth-child(1)"
+    
 }
