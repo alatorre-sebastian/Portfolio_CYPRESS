@@ -3,13 +3,19 @@ describe('Multiple actions',()=>{
         cy.visit('https://testautomationpractice.blogspot.com/')
       })
     it('Should open a new tab',()=>{
+        //En este caso elimnimos el atributo target, ya que originalmente esta en blanck, por lo que abriria otra pagina
+        //Cypress no pude manejar multiples tabs, por esta razon eliminamos el atributo
         cy.get('#Wikipedia1_wikipedia-search-input').click().type('cars')
         cy.get('.wikipedia-search-button').click()
-        cy.get('#Wikipedia1_wikipedia-search-results > :nth-child(1) > a').should('have.attr','target','_blank').then((newtab)=>{
-            if (newtab){
-                cy.get('#Wikipedia1_wikipedia-search-results > :nth-child(1) > a').click()
-            }
-        })
+        cy.get('#Wikipedia1_wikipedia-search-results > :nth-child(1) > a').invoke('removeAttr', 'target').click()
+        cy.url().should('include', 'https://en.wikipedia.org/wiki/Car')
+        cy.go('back');
+        //cy.get('#Wikipedia1_wikipedia-search-results > :nth-child(1) > a').should('have.attr','target','_blank').then((newtab)=>{
+         //   if (newtab){
+            //    cy.get('#Wikipedia1_wikipedia-search-results > :nth-child(1) > a').click()
+            //    cy.closeTab() 
+            // }
+        //})
     })
     it('Should popup alert after click',()=>{
         cy.get('button').contains('Click Me').click()
@@ -140,16 +146,43 @@ describe('Multiple actions',()=>{
 
     })
 
-    it.only('Resizable',()=>{
-        cy.get('#resizable').trigger('mousedown',155,155,).trigger('mouseup',155,155,)
-        .trigger('mousedown',155,155,)
-        .trigger('mousemove',300,300,{force:true})
-        .trigger('mouseup',300,300,{force:true})
-
-        cy.wait(1000)
-
+    it('Resizable',()=>{
+        //No 100% completa
+        cy.get('#resizable').trigger('mousedown',150.095238,150.095238,{button: 0}).trigger('mousemove',300,300,{force:true}).trigger('mouseup',300,300,{force:true})
+        //cy.get('#resizable').trigger('mousedown',{ which: 1, pageX: 150.095238, pageY: 150.095238 }).trigger('mousemove',{ which: 1, pageX: 300, pageY: 300 }).trigger('mouseup',{ which: 1, pageX: 300, pageY: 300 })
+        
+        //cy.get('#resizable').then(($el) => {
+            //cy.log($el.width());
+            //cy.log($el.height());
+       //})
 
     })
+
+    it('Get element from HTML table',()=>{
+        cy.get('table[name="BookTable"]').contains('td','Javascript')
+        cy.get('table[name=BookTable] > tbody > tr:nth-child(4) > td:nth-child(4)').contains('300')
+    })
+
+    it('Tooltips',()=>{
+        //No 100% completa
+        cy.get('#age').realHover().should('have.css',"background-color", "rgb(255, 255, 255)")
+        //cy.get('.popover').should('be.visible')
+        cy.get('#HTML8 > .widget-content > :nth-child(4)').realHover();
+        cy.get('#age').should('be.visible').and('contains.text', '');
+
+    });
+    it('QR code/Barcode ',()=>{
+        //Utilizamos @zxing/library @zxing/browser
+        //y se implemento un custom command , para leer los qr y barcodes
+        cy.log('======Barcode 1=====')
+        cy.get('[src="https://3.bp.blogspot.com/-xaeByLfXiFk/XCxZ33hrgKI/AAAAAAAAPPI/5d4O-mf27lEQKtSiiBjx3UgtxSV0yJUpwCLcBGAs/s1600/barcode.gif"]')
+        .readCode().should('have.property', 'text', 'ABC-abc-123');
+        cy.log('======Barcode 2=====')
+        cy.get('[src="https://4.bp.blogspot.com/-_Bz0eHUicUY/XCxnkToPvQI/AAAAAAAAPPU/055m3a6VabUzUlwlzwwipQA-MImBuxq_wCLcBGAs/s1600/barcode2.gif"]')
+        .readCode().should('have.property', 'text', 'Hi this is Pavan');
+        cy.log('======Qr code=====')
+        cy.get('#HTML4 > .widget-content > img').readCode().should('have.property', 'text', 'Welcome to Selenium');
+    });
 });
         
 

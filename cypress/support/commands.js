@@ -24,7 +24,17 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-
+import { BrowserMultiFormatReader } from '@zxing/browser';
+const reader = new BrowserMultiFormatReader();
+Cypress.Commands.add('readCode', { prevSubject: true }, (subject) => {
+    const img = subject[0];
+    const image = new Image();
+    image.width = img.width;
+    image.height = img.height;
+    image.src = img.src;
+    image.crossOrigin = 'Anonymous';
+    return reader.decodeFromImageElement(image);
+  });
 Cypress.Commands.add('shippingForm',(number,street,city,country)=>{
     cy.fixture("shipping").then((shipping)=>{ 
         cy.get(shipping.phoneNumber).click().type(number);
