@@ -148,7 +148,9 @@ describe('Multiple actions',()=>{
 
     it('Resizable',()=>{
         //No 100% completa
-        cy.get('#resizable').trigger('mousedown',150.095238,150.095238,{button: 0}).trigger('mousemove',300,300,{force:true}).trigger('mouseup',300,300,{force:true})
+        //cy.get('#resizable').trigger('mousedown',150.095238,150.095238,{button: 0}).
+        //trigger('mousemove',300,300,{force:true}).trigger('mouseup',300,300,{force:true})
+        cy.get('#resizable').realMouseDown({ position: "right" }).realMouseMove(100,250).realMouseUp()//50,300
         //cy.get('#resizable').trigger('mousedown',{ which: 1, pageX: 150.095238, pageY: 150.095238 }).trigger('mousemove',{ which: 1, pageX: 300, pageY: 300 }).trigger('mouseup',{ which: 1, pageX: 300, pageY: 300 })
         
         //cy.get('#resizable').then(($el) => {
