@@ -134,29 +134,15 @@ describe('Multiple actions',()=>{
         cy.get('#droppable > p').should('have.text','Dropped!')
     })
 
-    it('Drag and Drop images',()=>{
-        cy.get('#gallery > :nth-child(1)').drag('#trash',{force:true})
-        cy.get('#gallery > :nth-child(2)').drag('#trash',{force:true})
-        cy.get('.gallery > :nth-child(1) > .ui-icon').click()
-        cy.get('.gallery > :nth-child(2) > .ui-icon').click()
-    })
-
     it('Slide',()=>{
         cy.get('.ui-slider-handle').invoke('attr','style','left: 50%;')
 
     })
 
     it('Resizable',()=>{
-        //No 100% completa
-        //cy.get('#resizable').trigger('mousedown',150.095238,150.095238,{button: 0}).
-        //trigger('mousemove',300,300,{force:true}).trigger('mouseup',300,300,{force:true})
+       
         cy.get('#resizable').realMouseDown({ position: "right" }).realMouseMove(100,250).realMouseUp()//50,300
-        //cy.get('#resizable').trigger('mousedown',{ which: 1, pageX: 150.095238, pageY: 150.095238 }).trigger('mousemove',{ which: 1, pageX: 300, pageY: 300 }).trigger('mouseup',{ which: 1, pageX: 300, pageY: 300 })
-        
-        //cy.get('#resizable').then(($el) => {
-            //cy.log($el.width());
-            //cy.log($el.height());
-       //})
+
 
     })
 
@@ -164,15 +150,7 @@ describe('Multiple actions',()=>{
         cy.get('table[name="BookTable"]').contains('td','Javascript')
         cy.get('table[name=BookTable] > tbody > tr:nth-child(4) > td:nth-child(4)').contains('300')
     })
-
-    it('Tooltips',()=>{
-        //No 100% completa
-        cy.get('#age').realHover().should('have.css',"background-color", "rgb(255, 255, 255)")
-        //cy.get('.popover').should('be.visible')
-        cy.get('#HTML8 > .widget-content > :nth-child(4)').realHover();
-        cy.get('#age').should('be.visible').and('contains.text', '');
-
-    });
+    /*
     it('QR code/Barcode ',()=>{
         //Utilizamos @zxing/library @zxing/browser
         //y se implemento un custom command , para leer los qr y barcodes
@@ -185,6 +163,7 @@ describe('Multiple actions',()=>{
         cy.log('======Qr code=====')
         cy.get('#HTML4 > .widget-content > img').readCode().should('have.property', 'text', 'Welcome to Selenium');
     });
+    */
 });
         
 

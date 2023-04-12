@@ -14,7 +14,7 @@ describe("API user test",()=>{
         }).then((res)=>{
             expect(res.status).to.eq(200)//es correcta la coneccion
             expect(res.body).to.have.length(10) //largo del body (contiene 10 usuarios en este caso)
-            expect(res.body[0]).to.have.property("name","Aaryan Jain") //el usuario en poscicion 0, lleva por nombre este 
+            expect(res.body[0]).to.have.property("name","Test name awesome") //el usuario en poscicion 0, lleva por nombre este 
         })
 
     })

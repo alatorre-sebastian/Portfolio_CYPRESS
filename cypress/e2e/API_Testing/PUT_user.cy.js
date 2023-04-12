@@ -12,7 +12,7 @@ describe('Updating user information', () => {
         //Crear nuevo usuario
         // Crear un nuevo usuario
         const newUser = {
-            "name": "Nombre de pruebaaa",
+            "name": "Nombre de prueba increible",
             "email": testEmail,
             "gender": "male",
             "status": "active"
@@ -36,8 +36,8 @@ describe('Updating user information', () => {
             const userId = res.body.id
             cy.log("User id: " + userId)
             const updatedUser = {
-                "name": "Nombre de prueba actualizado",
-                "email": "corre@actualizado1313",
+                "name": "Nombre de prueba increible actualizado",
+                "email": "corre@actualizado3239",
                 "gender": "male",
                 "status": "active"
             }

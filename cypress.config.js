@@ -6,6 +6,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: "https://qa-practice.netlify.app/auth_ecommerce.html", //Agregamos url base
+    video: true, // Agregamos esto para grabar video
+    trashAssetsBeforeRuns: false, // Agregamos esto para no borrar los videos
   },
 });
 
