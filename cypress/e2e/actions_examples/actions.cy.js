@@ -3,7 +3,7 @@ describe('Multiple actions',()=>{
         cy.visit('https://testautomationpractice.blogspot.com/')
       })
     it('Should open a new tab',()=>{
-        //En este caso elimnimos el atributo target, ya que originalmente esta en blanck, por lo que abriria otra pagina
+        //En este caso elimnimos el atributo target, ya que originalmente esta en blank, por lo que abriria otra pagina
         //Cypress no pude manejar multiples tabs, por esta razon eliminamos el atributo
         cy.get('#Wikipedia1_wikipedia-search-input').click().type('cars')
         cy.get('.wikipedia-search-button').click()
