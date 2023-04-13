@@ -33,7 +33,8 @@ For this example, I am going to use **[Automation Testing Practice Page](https:/
 ✅ Get element from HTML table
 
 #### 🎬Here's a quick video 
-https://user-images.githubusercontent.com/112382473/231691095-0766e6b6-5172-48dc-9ec2-ea50d71f89e6.mp4
+<img width="100" src="https://user-images.githubusercontent.com/112382473/231691095-0766e6b6-5172-48dc-9ec2-ea50d71f89e6.mp4">
+
 
 ---
 ## Small E-Commerce Example
