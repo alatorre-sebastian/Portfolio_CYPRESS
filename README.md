@@ -16,7 +16,8 @@
 - [Small E-Commerce Example](#small-e-commerce-example)
 
 
-## Action Examples <a href="https://github.com/alatorre-sebastian/Portfolio_CYPRESS/blob/master/cypress/e2e/actions_examples/actions.cy.js">Code Here!</a> 
+## Action Examples 
+### <a href="https://github.com/alatorre-sebastian/Portfolio_CYPRESS/blob/master/cypress/e2e/actions_examples/actions.cy.js">Code Here!</a> 
 For this example, I am going to use **[Automation Testing Practice Page](https://testautomationpractice.blogspot.com/)** which is used to test the different actions that a user could perform within a web application.
 ### Suite of tests
 ✅ Should open a new tab\
@@ -37,7 +38,8 @@ For this example, I am going to use **[Automation Testing Practice Page](https:/
 
 
 ---
-## Small E-Commerce Example <a href="https://github.com/alatorre-sebastian/Portfolio_CYPRESS/tree/master/cypress/e2e/ecommerce_example">Code Here!</a> 
+## Small E-Commerce Example 
+### <a href="https://github.com/alatorre-sebastian/Portfolio_CYPRESS/tree/master/cypress/e2e/ecommerce_example">Code Here!</a> 
 For this example, I'm going to use this **[Ecommerce page](https://qa-practice.netlify.app/auth_ecommerce.html)**, which has the following elements to practice: a login, adding items to the shopping cart, and placing an order.
 
 ### Suite of tests
@@ -64,7 +66,8 @@ https://user-images.githubusercontent.com/112382473/231698132-ef7498a6-2609-48b2
 https://user-images.githubusercontent.com/112382473/231698205-0591ca4b-f776-4895-84a3-806bb263f716.mp4
 
 ---
-## API Testing <a href="https://github.com/alatorre-sebastian/Portfolio_CYPRESS/tree/master/cypress/e2e/API_Testing">Code Here!</a> 
+## API Testing 
+### <a href="https://github.com/alatorre-sebastian/Portfolio_CYPRESS/tree/master/cypress/e2e/API_Testing">Code Here!</a> 
 For this case, I'm going to use **[this page](https://gorest.co.in/)**, which allows us to test the different HTTP methods used in REST APIs.
 
 ### Suite of tests
